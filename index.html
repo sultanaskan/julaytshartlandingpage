@@ -7,6 +7,58 @@
     <title>বিপ্লব ২০২৪ - বিশেষ এডিশন টি-শার্ট</title>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- বাটনগুলোর পজিশন ঠিক রাখার জন্য ইনলাইন সিএসএস (সার্ভার ফিক্স) -->
+    <style>
+        /* হোয়াটসঅ্যাপ ফ্লোটিং বাটন স্ক্রিনের ডানে নিচে ফিক্সড থাকবে */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 9999 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* মিউজিক টগল বাটন পজিশন ফিক্স */
+        .music-btn {
+            background: #111827;
+            border: 2px solid #3bb900;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .music-playing {
+            background: #3bb900;
+            box-shadow: 0 0 10px #3bb900;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,7 +78,7 @@
             <div class="logo">জুলাই বিপ্লব <span>২৪</span></div>
 
             <audio id="bg-music" loop>
-                <source src="/audio/july_song.mp3" type="audio/mpeg">
+                <source src="audio/july_song.mp3" type="audio/mpeg">
                 আপনার ব্রাউজারটি অডিও সাপোর্ট করে না।
             </audio>
 
@@ -34,14 +86,13 @@
                 <span class="music-icon">🎵</span>
             </button>
 
-            <a href="#order-form" class="btn-nav btn-order" style="margin: 1px;">অর্ডার করুন</a>
+            <a href="#order-form" class="btn-nav btn-order" style="margin: 1px;">অर्डर করুন</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-slide active-slide" id="slide-1"></div>
         <div class="hero-slide" id="slide-2"></div>
-
 
         <div class="hero-content">
             <span class="tag">স্মৃতি ২০২৪</span>
@@ -77,8 +128,6 @@
     <section id="products" class="products-section">
         <div class="container">
             <h2 class="section-title">আমাদের <span>এক্সক্লুসিভ</span> কালেকশন</h2>
-
-            <!-- প্রোডাক্ট গ্রিড (জাভাস্ক্রিপ্ট দিয়ে এখানে ডাটা লোড হবে) -->
             <div class="products-grid" id="dynamic-products-grid"></div>
         </div>
     </section>
@@ -86,7 +135,7 @@
     <section id="order-form" class="order-section">
         <div class="container">
             <div class="form-container">
-                <h2>অর্ডার কনফার্ম করুন</h2>
+                <h2>অर्डर কনফার্ম করুন</h2>
                 <p class="form-subtitle">নিচের ফর্মে সঠিক তথ্য দিয়ে আপনার অর্ডারটি সম্পন্ন করুন। আমাদের প্রতিনিধি কল
                     করে অর্ডার কনফার্ম করবেন।</p>
 
@@ -158,17 +207,15 @@
             <p>&copy; ২০২৬ বিপ্লব ২৪ কালেকশন। সর্বস্বত্ব সংরক্ষিত।</p>
             <a href="https://sultanaskan.github.io" target="_blank"> Developed by Sultan Ahmed</a>
         </div>
-    </footer>
-
-    <!-- ডাটা ও লজিক জাভাস্ক্রিপ্ট সেকশন -->
+    </footer <!-- ডাটা ও লজিক জাভাস্ক্রিপ্ট সেকশন -->
     <script>
-        // ১. প্রোডাক্ট লিস্ট অবজেক্ট (Data Separated)
+        // ১. প্রোডাক্ট লিস্ট অবজেক্ট (Data)
         const productsData = [
             {
                 id: "A",
                 title: "ডিজাইন এ: \"জুলাই উল্লাস\"",
                 category: "Premium Polo (100% Cotton)",
-                image: "/img/product_image/24_bijoy_ullas/polo_t-shart/white.jpeg",
+                image: "img/product_image/24_bijoy_ullas/polo_t-shart/white.jpeg", // সার্ভার সেফ রিলেটিভ পাথ
                 discount: "৩০% ছাড়",
                 sales: "১,২৫০+",
                 rating: "৪.৯/৫",
@@ -190,7 +237,7 @@
                 id: "B",
                 title: "ডিজাইন বি: \"স্বাধীনতা ২৪\"",
                 category: "Premium Polo (100% Cotton)",
-                image: "/img/product_image/24_bijoy_ullas/polo_t-shart/green.jpeg",
+                image: "img/product_image/24_bijoy_ullas/polo_t-shart/green.jpeg",
                 discount: "৩০% ছাড়",
                 sales: "৯8০+",
                 rating: "৪.৮/৫",
@@ -208,10 +255,10 @@
                 id: "C",
                 title: "ডিজাইন সি: \"বুকের ভেতর দারুণ ঝড়\"",
                 category: "Premium Polo (100% Cotton)",
-                image: "/img/product_image/24_bijoy_ullas/polo_t-shart/black.jpeg",
+                image: "img/product_image/24_bijoy_ullas/polo_t-shart/black.jpeg",
                 discount: "৩০% ছাড়",
                 sales: "১,১০০+",
-                rating: "৪.৯/৫",
+                rating: "৪.准/৫",
                 reviews: "১৪টি রিভিউ",
                 description: "শহীদি চেতনা এবং বীরত্বগাথা ফুটিয়ে তোলা মিনিমালিস্ট এবং ট্রেন্ডি ডিজাইন।",
                 features: [
@@ -224,19 +271,18 @@
             }
         ];
 
-        // ২. লুপের সাহায্যে ডাইনামিক কার্ড রেন্ডারিং (Logic)
+        // ২. লুপের সাহায্যে ডাইনামিক কার্ড রেন্ডারিং
         function renderProducts() {
             const grid = document.getElementById('dynamic-products-grid');
+            if (!grid) return;
             let htmlContent = '';
 
             productsData.forEach(product => {
-                // ফিচারস লিস্ট তৈরি
                 let featuresHTML = '';
                 product.features.forEach(f => {
                     featuresHTML += `<li>🟢 <b>${f.split(':')[0]}:</b>${f.split(':')[1]}</li>`;
                 });
 
-                // কালার ডট তৈরি
                 let colorsHTML = '';
                 if (product.colors && product.colors.length > 0) {
                     colorsHTML = `
@@ -248,7 +294,6 @@
                         </div>`;
                 }
 
-                // কার্ডের স্ট্রাকচার
                 htmlContent += `
                     <div class="product-card">
                         <div>
@@ -256,30 +301,23 @@
                                 <img src="${product.image}" alt="${product.title}" class="product-img">
                                 ${product.discount ? `<span class="discount-badge">${product.discount}</span>` : ''}
                             </div>
-
                             <div class="product-info">
                                 <div class="meta-info">
                                     <span class="fabric-type">${product.category}</span>
                                     <span class="total-sales">🔥 <span class="sales-count">${product.sales}</span> বিক্রি হয়েছে</span>
                                 </div>
-
                                 <h3>${product.title}</h3>
-
                                 <div class="rating-box">
                                     <div class="stars">⭐⭐⭐⭐⭐</div>
                                     <span class="rating-text">${product.rating} (<span class="review-count">${product.reviews}</span>)</span>
                                 </div>
-
                                 <p>${product.description}</p>
-
                                 <ul class="product-features">
                                     ${featuresHTML}
                                 </ul>
-
                                 ${colorsHTML}
                             </div>
                         </div>
-
                         <div class="product-info" style="padding-top: 0;">
                             <div class="price-box">
                                 <span class="current-price">৳ ${product.currentPrice} <span class="old-price">৳ ${product.oldPrice}</span></span>
@@ -289,11 +327,9 @@
                     </div>
                 `;
             });
-
             grid.innerHTML = htmlContent;
         }
 
-        // পেজ লোড হলে রেন্ডার ফাংশন কল হবে
         document.addEventListener('DOMContentLoaded', renderProducts);
 
         // ৩. হোয়াটসঅ্যাপ ফ্লোটিং বাটন হ্যান্ডলার
@@ -301,165 +337,129 @@
             var num = "8801880884197";
             var msg = "আসসালামু আলাইকুম। আমি আপনাদের 'বিপ্লব ২৪' টি-শার্ট কালেকশনটি দেখেছি। এ বিষয়ে বিস্তারিত জানতে চাই।";
             var fullUrl = "https://api.whatsapp.com/send?phone=" + num + "&text=" + encodeURIComponent(msg);
-            document.getElementById("whatsapp-customer-care").href = fullUrl;
+            var waBtn = document.getElementById("whatsapp-customer-care");
+            if (waBtn) waBtn.href = fullUrl;
         })();
 
         // ৪. ফর্ম সাবমিশন লজিক
-        document.getElementById('ts-order-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const address = document.getElementById('address').value;
-            const quantity = document.getElementById('quantity').value;
-            const color = document.getElementById('color').value;
-            const design = document.getElementById('design').value;
-            const size = document.getElementById('size').value;
+        const orderForm = document.getElementById('ts-order-form');
+        if (orderForm) {
+            orderForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const address = document.getElementById('address').value;
+                const quantity = document.getElementById('quantity').value;
+                const color = document.getElementById('color').value;
+                const design = document.getElementById('design').value;
+                const size = document.getElementById('size').value;
 
-            const whatsappNumber = "8801880884197";
-            const message = `*নতুন টি-শার্ট অর্ডার বিবরণী (বিপ্লব ২৪)*\n` +
-                `----------------------------------\n\n` +
-                `👤 *নাম:* ${name}\n` +
-                `📞 *মোবাইল নম্বর:* ${phone}\n` +
-                `📍 *ঠিকানা:* ${address}\n\n` +
-                `🛒 *পরিমাণ:* ${quantity}\n` +
-                `🎨 *রঙ:* ${color}\n` +
-                `👕 *ডিজাইন:* ${design}\n` +
-                `📏 *সাইজ:* ${size}\n\n` +
-                `----------------------------------\n` +
-                `_ক্যাশ অন ডেলিভারিতে অর্ডারটি কনফার্ম করুন।_`;
+                const whatsappNumber = "8801880884197";
+                const message = `*নতুন টি-শার্ট অর্ডার বিবরণী (বিপ্লব ২৪)*\n` +
+                    `----------------------------------\n\n` +
+                    `👤 *নাম:* ${name}\n` +
+                    `📞 *মোবাইল নম্বর:* ${phone}\n` +
+                    `📍 *ঠিকানা:* ${address}\n\n` +
+                    `🛒 *পরিমাণ:* ${quantity}\n` +
+                    `🎨 *রঙ:* ${color}\n` +
+                    `👕 *ডিজাইন:* ${design}\n` +
+                    `📏 *সাইজ:* ${size}\n\n` +
+                    `----------------------------------\n` +
+                    `_ক্যাশ অন ডেলিভারিতে অর্ডারটি কনফার্ম করুন।_`;
 
-            window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`, '_blank');
-        });
-
-
-
+                window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`, '_blank');
+            });
+        }
 
         // ৫. ব্যাকগ্রাউন্ড মিউজিক কন্ট্রোল
         const bgMusic = document.getElementById('bg-music');
         const musicToggle = document.getElementById('music-toggle');
-        const musicIcon = musicToggle.querySelector('.music-icon');
 
-        bgMusic.volume = 1;
-        bgMusic.muted = true;
-        bgMusic.play().catch(err => console.log("Autoplay waiting for interaction"));
+        if (bgMusic && musicToggle) {
+            const musicIcon = musicToggle.querySelector('.music-icon');
+            bgMusic.volume = 1;
+            bgMusic.muted = true;
+            bgMusic.play().catch(err => console.log("Autoplay waiting for interaction"));
 
-        function activateSound() {
-            if (bgMusic.muted) {
-                bgMusic.muted = false;
-                musicToggle.classList.add('music-playing');
-                musicIcon.textContent = '🔊';
-                window.removeEventListener('scroll', activateSound);
-                document.removeEventListener('mousemove', activateSound);
-                document.removeEventListener('touchstart', activateSound);
+            function activateSound() {
+                if (bgMusic.muted) {
+                    bgMusic.muted = false;
+                    musicToggle.classList.add('music-playing');
+                    if (musicIcon) musicIcon.textContent = '🔊';
+                    window.removeEventListener('scroll', activateSound);
+                    document.removeEventListener('mousemove', activateSound);
+                    document.removeEventListener('touchstart', activateSound);
+                }
             }
+
+            window.addEventListener('scroll', activateSound, { passive: true });
+            document.addEventListener('mousemove', activateSound, { passive: true });
+            document.addEventListener('touchstart', activateSound, { passive: true });
+
+            musicToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (bgMusic.muted || bgMusic.paused) {
+                    bgMusic.muted = false;
+                    bgMusic.play();
+                    musicToggle.classList.add('music-playing');
+                    if (musicIcon) musicIcon.textContent = '🔊';
+                } else {
+                    bgMusic.pause();
+                    musicToggle.classList.remove('music-playing');
+                    if (musicIcon) musicIcon.textContent = '🔇';
+                }
+            });
         }
 
-        window.addEventListener('scroll', activateSound, { passive: true });
-        document.addEventListener('mousemove', activateSound, { passive: true });
-        document.addEventListener('touchstart', activateSound, { passive: true });
-
-        musicToggle.addEventListener('click', function (e) {
-            e.stopPropagation();
-            if (bgMusic.muted || bgMusic.paused) {
-                bgMusic.muted = false;
-                bgMusic.play();
-                musicToggle.classList.add('music-playing');
-                musicIcon.textContent = '🔊';
-            } else {
-                bgMusic.pause();
-                musicToggle.classList.remove('music-playing');
-                musicIcon.textContent = '🔇';
-            }
-        });
-
-
-
-        // ৬. হিরো স্লাইডার লজিক
+        // ৬. হিরো স্লাইডার লজিক (সার্ভার সেফ পাথ ফিক্সড)
         document.addEventListener("DOMContentLoaded", function () {
-            // ১. আপনার ইমেজের লিস্ট (এখানে আপনি যত খুশি ইমেজ এবং তাদের নির্দিষ্ট ওভারলে কালার বসাতে পারবেন)
             const slidesData = [
-                {
-                    img: "/img/hero_banner/hero_banner_1.webp",
-                    overlay: "linear-gradient(rgba(59, 185, 0, 0.24), rgba(0, 0, 0, 0.65))"
-                },
-                {
-                    img: "/img/hero_banner/hero_banner_2.jpg",
-                    overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))"
-                },
-                {
-                    img: "/img/hero_banner/hero_banner_3.webp",
-                    overlay: "linear-gradient(rgba(0, 158, 8, 0.65), rgba(119, 3, 3, 0.281))"
-                },
-                {
-                    img: "/img/hero_banner/hero_banner_4.jpg",
-                    overlay: "linear-gradient(rgba(36, 146, 3, 0.4), rgba(0, 0, 0, 0.7))"
-                },
-                {
-                    img: "/img/hero_banner/hero_banner_5.webp",
-                    overlay: "linear-gradient(rgba(59, 185, 0, 0.3), rgba(0, 0, 0, 0.7))"
-                },
-                {
-                    img: "/img/hero_banner/hero_banner_6.jpg",
-                    overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))"
-                },
-                {
-                    img: "/img/hero_banner/hero_banner_7.jpg",
-                    overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))"
-                },
-                {
-                    img: "/img/hero_banner/hero_banner_8.jpg",
-                    overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))"
-                },
-                {
-                    img: "/img/hero_banner/hero_banner_9.avif",
-                    overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))"
-                },
-                {
-                    img: "/img/hero_banner/hero_banner_10.webp",
-                    overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))"
-                }
+                { img: "img/hero_banner/hero_banner_1.webp", overlay: "linear-gradient(rgba(59, 185, 0, 0.24), rgba(0, 0, 0, 0.65))" },
+                { img: "img/hero_banner/hero_banner_2.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
+                { img: "img/hero_banner/hero_banner_3.webp", overlay: "linear-gradient(rgba(0, 158, 8, 0.65), rgba(119, 3, 3, 0.281))" },
+                { img: "img/hero_banner/hero_banner_4.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.4), rgba(0, 0, 0, 0.7))" },
+                { img: "img/hero_banner/hero_banner_5.webp", overlay: "linear-gradient(rgba(59, 185, 0, 0.3), rgba(0, 0, 0, 0.7))" },
+                { img: "img/hero_banner/hero_banner_6.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
+                { img: "img/hero_banner/hero_banner_7.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
+                { img: "img/hero_banner/hero_banner_8.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
+                { img: "img/hero_banner/hero_banner_9.avif", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
+                { img: "img/hero_banner/hero_banner_10.webp", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" }
             ];
 
             const slide1 = document.getElementById("slide-1");
             const slide2 = document.getElementById("slide-2");
 
+            if (!slide1 || !slide2) return;
+
             let currentIndex = 0;
             let isSlide1Active = true;
-            const displayDuration = 5000; // প্রতিটি ইমেজ কত মিলি-সেকেন্ড স্ক্রিনে থাকবে (৫০০০ms = ৫ সেকেন্ড)
+            const displayDuration = 5000;
 
-            // স্লাইডের ব্যাকগ্রাউন্ড স্টাইল সেট করার ফাংশন
             function setSlideStyle(slideElement, index) {
                 slideElement.style.backgroundImage = `${slidesData[index].overlay}, url('${slidesData[index].img}')`;
             }
 
-            // প্রথম ইমেজটি লোড করা
+            // প্রথম ইমেজ সেটআপ
             setSlideStyle(slide1, currentIndex);
 
-            // ডাইনামিক ক্রিসফেড অ্যানিমেশন লজিক
             setInterval(function () {
-                // পরবর্তী ইমেজের ইনডেক্স বের করা
                 let nextIndex = (currentIndex + 1) % slidesData.length;
 
                 if (isSlide1Active) {
-                    // স্লাইড ২-এ পরের ইমেজ সেট করে সেটিকে দৃশ্যমান করা
                     setSlideStyle(slide2, nextIndex);
                     slide2.classList.add("active-slide");
                     slide1.classList.remove("active-slide");
                 } else {
-                    // স্লাইড ১-এ পরের ইমেজ সেট করে সেটিকে দৃশ্যমান করা
                     setSlideStyle(slide1, nextIndex);
                     slide1.classList.add("active-slide");
                     slide2.classList.remove("active-slide");
                 }
 
-                // ইনডেক্স এবং একটিভ স্টেট আপডেট
                 currentIndex = nextIndex;
                 isSlide1Active = !isSlide1Active;
-
             }, displayDuration);
         });
     </script>
-
 </body>
 
 </html>
