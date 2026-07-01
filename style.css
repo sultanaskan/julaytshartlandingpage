@@ -1,0 +1,429 @@
+/* -----------------------------------------
+   1. Google Fonts & Variables
+-------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap');
+
+:root {
+    --primary-red: #dc2626;
+    --primary-green: #16a34a;
+    --dark-bg: #111827;
+    --light-bg: #f9fafb;
+    --text-dark: #1f2937;
+    --text-muted: #4b5563;
+    --white: #ffffff;
+    --border-color: #e5e7eb;
+}
+
+/* -----------------------------------------
+   2. Base Styles
+-------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -----------------------------------------
+   3. Header Styles
+-------------------------------------------- */
+header {
+    background-color: var(--white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-red);
+}
+
+.logo span {
+    color: var(--primary-green);
+}
+
+.btn-header {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(22, 163, 74, 0.2);
+}
+
+.btn-header:hover {
+    background-color: #15803d;
+    transform: translateY(-2px);
+}
+
+/* -----------------------------------------
+   4. Hero Section
+-------------------------------------------- */
+.hero {
+    background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(0, 0, 0, 0.95)),
+        url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80') center/cover no-repeat;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.tag {
+    background-color: var(--primary-red);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.hero h1 span {
+    color: #22c55e;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #d1d5db;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn-hero {
+    background-color: var(--primary-red);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 15px 40px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+}
+
+.btn-hero:hover {
+    background-color: #b91c1c;
+    transform: translateY(-2px);
+}
+
+/* -----------------------------------------
+   5. Features Section
+-------------------------------------------- */
+.features {
+    padding: 60px 0;
+    background-color: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--light-bg);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.feature-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* -----------------------------------------
+   6. Products Section
+-------------------------------------------- */
+.products {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: var(--primary-red);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 25px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+.old-price {
+    font-size: 14px;
+    color: #9ca3af;
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+
+.discount-badge {
+    background-color: #fee2e2;
+    color: var(--primary-red);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+.btn-product {
+    display: block;
+    text-align: center;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-product:hover {
+    background-color: #000000;
+}
+
+/* -----------------------------------------
+   7. Order Form Section
+-------------------------------------------- */
+.order-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--light-bg);
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.form-container h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.form-sub {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #374151;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background-color: var(--white);
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 140fr 140fr;
+    gap: 15px;
+}
+
+.delivery-box {
+    background-color: #fef9c3;
+    border: 1px solid #fef08a;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #713f12;
+    margin-bottom: 25px;
+}
+
+.delivery-box p:first-child {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(22, 163, 74, 0.2);
+}
+
+.btn-submit:hover {
+    background-color: #15803d;
+    transform: translateY(-1px);
+}
+
+/* -----------------------------------------
+   8. Footer
+-------------------------------------------- */
+footer {
+    background-color: var(--dark-bg);
+    color: #9ca3af;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 14px;
+    border-top: 1px solid #1f2937;
+}
+
+/* -----------------------------------------
+   9. Responsive Media Queries
+-------------------------------------------- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .form-container {
+        padding: 30px 20px;
+    }
+}
