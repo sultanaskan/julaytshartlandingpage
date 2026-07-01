@@ -69,6 +69,86 @@ header .container {
     color: var(--primary-green);
 }
 
+
+/* ==========================================================================
+   অ্যানিমেটেড গ্লোয়িং বর্ডারযুক্ত অর্ডার বাটন
+   ========================================================================== */
+.btn-order {
+    position: relative;
+    display: block;
+    text-align: center;
+    background-color: var(--dark-bg);
+    /* বাটনের মেইন ব্যাকগ্রাউন্ড */
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 10px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    z-index: 1;
+    overflow: hidden;
+    /* বর্ডারের বাইরের বাড়তি অংশ লুকিয়ে রাখার জন্য */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.25);
+}
+
+/* বাটনের পেছনের ব্যাকগ্রাউন্ড কালার বেল্ট যা অনবরত ঘুরবে */
+.btn-order::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    /* লাল ও সবুজ কালারের মিক্সড অ্যানিমেটেড গ্রেডিয়েন্ট (জুলাই বিপ্লব থিম) */
+    background: conic-gradient(transparent,
+            var(--primary-red),
+            #ff4d4d,
+            transparent,
+            var(--primary-green),
+            #4ade80,
+            transparent);
+    z-index: -2;
+    animation: rotateBorder 3s linear infinite;
+    /* ৩ সেকেন্ড পর পর ঘুরবে */
+}
+
+/* ভেতরের মেইন শেপ যা বর্ডারটিকে চিকন ও সুন্দর দেখাবে */
+.btn-order::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    /* বর্ডারটি কতটা চিকন বা মোটা হবে তা নির্ধারণ করে (3px আদর্শ) */
+    background: var(--dark-bg);
+    /* আগের ডার্ক ব্যাকগ্রাউন্ড মেইনটেইন করবে */
+    border-radius: 9px;
+    /* মেইন বর্ডারের সাথে সামঞ্জস্য রেখে সামান্য কম */
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* মাউস হোভার করলে ইফেক্ট */
+.btn-order:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(22, 163, 74, 0.4);
+}
+
+.btn-order:hover::after {
+    background: #000000;
+    /* হোভার করলে ভেতরের অংশ আরও ড্রামাটিক ডার্ক হবে */
+}
+
+/* রোটেশন অ্যানিমেশন কিফ্রেম */
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .btn-header {
     background-color: var(--primary-green);
     color: var(--white);
@@ -85,21 +165,83 @@ header .container {
     transform: translateY(-2px);
 }
 
-/* -----------------------------------------
-   4. Hero Section
--------------------------------------------- */
+
+
+/* ==========================================================================
+   অ্যানিমেটেড ব্যাকগ্রাউন্ড স্লাইডারযুক্ত হিরো সেকশন
+   ========================================================================== */
+/* ==========================================================================
+   স্মুথ অ্যানিমেটেড ব্যাকগ্রাউন্ড স্লাইডার (ব্ল্যাংক ইফেক্ট ফিক্সড)
+   ========================================================================== */
+/* ==========================================================================
+   ডাইনামিক হিরো স্লাইডার সিএসএস
+   ========================================================================== */
 .hero {
-    background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(0, 0, 0, 0.95)),
-        url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80') center/cover no-repeat;
-    color: var(--white);
+    position: relative;
+    color: #ffffff;
     text-align: center;
-    padding: 100px 20px;
+    padding: 110px 20px;
+    overflow: hidden;
+    background-color: #111827;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    /* শুরুতে ইনভিজিবল */
+    z-index: 1;
+    /* এই ট্রানজিশনের কারণে ইমেজ চেঞ্জ হওয়ার সময় কোনো ব্ল্যাংক স্পেস দেখাবে না, স্মুথ ক্রসফেড হবে */
+    transition: opacity 1.5s ease-in-out;
+}
+
+/* যে স্লাইডটি বর্তমানে স্ক্রিনে দেখাবে */
+.hero-slide.active-slide {
+    opacity: 1;
 }
 
 .hero-content {
-    max-width: 750px;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
     margin: 0 auto;
 }
+
+/* অপাসিটি অ্যানিমেশন টাইমলাইন (১০০% স্মুথ ক্রসফেড) */
+@keyframes smoothSlider {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+
+    8% {
+        opacity: 1;
+        /* ইমেজটি ভেসে উঠবে */
+    }
+
+    33% {
+        opacity: 1;
+        /* ইমেজটি স্থায়ী থাকবে */
+    }
+
+    41% {
+        opacity: 0;
+        /* ইমেজটি আস্তে আস্তে মিলিয়ে যাবে */
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
 
 .tag {
     background-color: var(--primary-red);
@@ -147,6 +289,9 @@ header .container {
     background-color: #b91c1c;
     transform: translateY(-2px);
 }
+
+
+
 
 /* -----------------------------------------
    5. Features Section
@@ -425,5 +570,128 @@ footer {
 
     .form-container {
         padding: 30px 20px;
+    }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   মিউজিক বাটন স্টাইল
+   ========================================================================== */
+.music-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    /* স্ক্রিনের নিচে বাম কোণায় থাকবে (ডান কোণায় চ্যাট/হোয়াটসঅ্যাপ বাটন থাকলে সুবিধা) */
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-red, #dc2626);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    transform: scale(1.1);
+}
+
+/* মিউজিক যখন চলবে তখন বাটনটি হালকা অ্যানিমেট হবে */
+.music-playing {
+    background-color: var(--primary-green, #16a34a);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(22, 163, 74, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+    }
+}
+
+
+
+
+/* ==========================================================================
+   ফ্লোটিং হোয়াটসঅ্যাপ বাটন স্টাইল
+   ========================================================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    /* স্ক্রিনের নিচে ডান কোণায় থাকবে */
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    /* হোয়াটসঅ্যাপ অফিশিয়াল গ্রিন */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 99999;
+    /* বাটনটি যেন সবার ওপরে থাকে */
+    transition: all 0.3s ease;
+    animation: waPulse 2s infinite;
+    /* আকর্ষণীয় পালস অ্যানিমেশন */
+}
+
+/* আইকনের সাইজ ঠিক করার জন্য */
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+}
+
+/* মাউস হোভার করলে বাটনটি সামান্য বড় হবে */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #20ba5a;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+}
+
+/* অনবরত কাস্টমারের দৃষ্টি আকর্ষণ করার জন্য পালসিং ইফেক্ট */
+@keyframes waPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* মোবাইল ডিভাইসের স্ক্রিন ছোট হলে বাটনের পজিশন কিছুটা অ্যাডজাস্ট করার জন্য */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .whatsapp-icon {
+        width: 30px;
+        height: 30px;
     }
 }
