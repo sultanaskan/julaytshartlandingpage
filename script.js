@@ -259,16 +259,35 @@ function initBackgroundMusic() {
 // ==========================================
 function initHeroSlider() {
     const slidesData = [
-        { img: "img/hero_banner/hero_banner_1.webp", overlay: "linear-gradient(rgba(59, 185, 0, 0.24), rgba(0, 0, 0, 0.65))" },
-        { img: "img/hero_banner/hero_banner_2.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
-        { img: "img/hero_banner/hero_banner_3.webp", overlay: "linear-gradient(rgba(0, 158, 8, 0.65), rgba(119, 3, 3, 0.281))" },
-        { img: "img/hero_banner/hero_banner_4.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.4), rgba(0, 0, 0, 0.7))" },
-        { img: "img/hero_banner/hero_banner_5.webp", overlay: "linear-gradient(rgba(59, 185, 0, 0.3), rgba(0, 0, 0, 0.7))" },
-        { img: "img/hero_banner/hero_banner_6.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
-        { img: "img/hero_banner/hero_banner_7.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
-        { img: "img/hero_banner/hero_banner_8.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
-        { img: "img/hero_banner/hero_banner_9.avif", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
-        { img: "img/hero_banner/hero_banner_10.webp", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" }
+        // গ্রিন ডমিন্যান্ট ওভারলে (সবুজ এবং কালোর ব্লেন্ড)
+        { img: "img/hero_banner/hero_banner_1.webp", overlay: "linear-gradient(rgba(22, 163, 74, 0.45), rgba(17, 24, 39, 0.85))" },
+
+        // রেড ডমিন্যান্ট ওভারলে (লাল এবং কালোর ব্লেন্ড)
+        { img: "img/hero_banner/hero_banner_2.jpg", overlay: "linear-gradient(rgba(220, 38, 38, 0.45), rgba(17, 24, 39, 0.85))" },
+
+        // লাল ও সবুজের সরাসরি মিক্সড ক্রসব্লেন্ড (বিপ্লবের আবহ)
+        { img: "img/hero_banner/hero_banner_3.webp", overlay: "linear-gradient(rgba(22, 163, 74, 0.5), rgba(185, 28, 28, 0.6))" },
+
+        // ডিপ ফরেস্ট গ্রিন ওভারলে
+        { img: "img/hero_banner/hero_banner_4.jpg", overlay: "linear-gradient(rgba(21, 128, 61, 0.4), rgba(11, 15, 26, 0.9))" },
+
+        // ব্লাড রেড ওভারলে
+        { img: "img/hero_banner/hero_banner_5.webp", overlay: "linear-gradient(rgba(185, 28, 28, 0.45), rgba(11, 15, 26, 0.9))" },
+
+        // লাইট গ্রিন ভাইব
+        { img: "img/hero_banner/hero_banner_6.jpg", overlay: "linear-gradient(rgba(22, 163, 74, 0.35), rgba(17, 24, 39, 0.85))" },
+
+        // ভাইব্রেন্ট রেড ভাইব
+        { img: "img/hero_banner/hero_banner_7.jpg", overlay: "linear-gradient(rgba(220, 38, 38, 0.35), rgba(17, 24, 39, 0.85))" },
+
+        // লাল-সবুজের আলতো ক্রসব্লেন্ড (ডার্ক বেস)
+        { img: "img/hero_banner/hero_banner_8.jpg", overlay: "linear-gradient(rgba(21, 128, 61, 0.4), rgba(153, 27, 27, 0.5), rgba(11, 15, 26, 0.85))" },
+
+        // ডিপ গ্রিন
+        { img: "img/hero_banner/hero_banner_9.avif", overlay: "linear-gradient(rgba(22, 163, 74, 0.4), rgba(17, 24, 39, 0.85))" },
+
+        // ডিপ রেড
+        { img: "img/hero_banner/hero_banner_10.webp", overlay: "linear-gradient(rgba(220, 38, 38, 0.4), rgba(17, 24, 39, 0.85))" }
     ];
 
     const slide1 = document.getElementById("slide-1");

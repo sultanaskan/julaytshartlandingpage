@@ -753,23 +753,242 @@ header .container {
 /* -----------------------------------------
    8. Footer
 -------------------------------------------- */
+/* ==========================================================================
+   Premium Multi-Column Footer Design
+   ========================================================================== */
 footer {
-    background-color: var(--dark-bg);
+    background-color: #0f172a;
+    /* আরও ডিপ গর্জিয়াস ডার্ক ব্যাকগ্রাউন্ড */
     color: #9ca3af;
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 14px;
-    border-top: 1px solid #1f2937;
+    padding: 60px 0 0 0;
+    font-size: 15px;
+    border-top: 3px solid var(--primary-green);
 }
 
-footer a {
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr 0.9fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-col h4 {
     color: var(--white);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+/* শিরোনামের নিচে ছোট লাল আন্ডারলাইন এফেক্ট */
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 35px;
+    height: 3px;
+    background-color: var(--primary-red);
+    border-radius: 2px;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo span {
+    color: var(--primary-green);
+}
+
+.footer-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #9ca3af;
+}
+
+/* কন্টাক্ট লিস্ট স্টাইল */
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.footer-contact-list li .icon {
+    font-size: 16px;
+}
+
+.footer-contact-list a {
+    color: #9ca3af;
     text-decoration: none;
-    margin-left: 5px;
+    transition: color 0.2s ease;
+}
+
+.footer-contact-list li:hover a {
+    color: var(--primary-green);
+}
+
+/* প্রিমিয়াম ফেসবুক বাটন ডিজাইন */
+.footer-social-links {
+    margin-top: 10px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.fb-btn {
+    background-color: #1877f2;
+    color: var(--white) !important;
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.25);
+}
+
+.fb-btn:hover {
+    background-color: #166fe5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(24, 119, 242, 0.4);
+}
+
+.fb-icon {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    background: var(--white);
+    color: #1877f2;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* কপিরাইট বটম বার */
+.footer-bottom {
+    background-color: #0b0f19;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* রেসপন্সিভ মোবাইল ডিজাইন */
+@media (max-width: 768px) {
+    footer {
+        padding-top: 40px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .footer-col h4 {
+        margin-bottom: 15px;
+    }
 }
 
 footer a:hover {
     color: var(--primary-green);
+}
+
+/* ==========================================================================
+   Developer Signature CSS
+   ========================================================================== */
+.footer-bottom-flex {
+    display: table;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.copyright-text {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.developer-sign {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #6b7280;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dev-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 4px;
+    transition: all 0.3s ease;
+    border-bottom: 1px dashed transparent;
+}
+
+.dev-link span {
+    display: inline-block;
+    animation: heartBeat 1.5s infinite;
+}
+
+/* ডেভেলপারের নামের উপর হোভার করলে লাল বা সবুজ কালার এফেক্ট */
+.dev-link:hover {
+    color: var(--primary-green);
+    border-bottom-color: var(--primary-green);
+}
+
+/* লাভ আইকনের বিট অ্যানিমেশন */
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* মোবাইল রেসপন্সিভ (মোবাইলে একটির নিচে আরেকটি সেন্টারে আসবে) */
+@media (max-width: 768px) {
+
+    .footer-bottom-flex,
+    .copyright-text,
+    .developer-sign {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .developer-sign {
+        margin-top: 10px;
+    }
 }
 
 /* ==========================================================================
