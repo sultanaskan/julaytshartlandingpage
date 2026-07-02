@@ -7,63 +7,10 @@
     <title>বিপ্লব ২০২৪ - বিশেষ এডিশন টি-শার্ট</title>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <!-- বাটনগুলোর পজিশন ঠিক রাখার জন্য ইনলাইন সিএসএস (সার্ভার ফিক্স) -->
-    <style>
-        /* হোয়াটসঅ্যাপ ফ্লোটিং বাটন স্ক্রিনের ডানে নিচে ফিক্সড থাকবে */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: #25d366;
-            color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-            z-index: 9999 !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.3s ease;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        .whatsapp-icon {
-            width: 35px;
-            height: 35px;
-        }
-
-        /* মিউজিক টগল বাটন পজিশন ফিক্স */
-        .music-btn {
-            background: #111827;
-            border: 2px solid #3bb900;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .music-playing {
-            background: #3bb900;
-            box-shadow: 0 0 10px #3bb900;
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- হোয়াটসঅ্যাপ ফ্লোটিং বাটন -->
     <a href="#" id="whatsapp-customer-care" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
         aria-label="Chat with Customer Care on WhatsApp">
         <svg viewBox="0 0 32 32" class="whatsapp-icon">
@@ -79,14 +26,13 @@
 
             <audio id="bg-music" loop>
                 <source src="audio/july_song.mp3" type="audio/mpeg">
-                আপনার ব্রাউজারটি অডিও সাপোর্ট করে না।
             </audio>
 
             <button id="music-toggle" class="music-btn" aria-label="Toggle Music">
                 <span class="music-icon">🎵</span>
             </button>
 
-            <a href="#order-form" class="btn-nav btn-order" style="margin: 1px;">অর্ডার করুন</a>
+            <a href="#order-form" class="btn-nav btn-order">অর্ডার করুন</a>
         </div>
     </header>
 
@@ -99,9 +45,202 @@
             <h1>জুলাই বিপ্লবের <span>রক্তিম ইতিহাস</span> বুকে ধারণ করুন</h1>
             <p>তরুণ প্রজন্মের সাহসিকতা এবং জুলাই গণ-অভ্যুত্থানের চেতনাকে স্মরণীয় করে রাখতে আমাদের বিশেষ এডিশন "বিপ্লব
                 ২৪" প্রিমিয়াম কোয়ালিটি টি-শার্ট।</p>
-            <a href="#products" class="btn-hero">সংগ্রহ করুন এখনই</a>
+            <a href="#checkout-section" class="btn-hero">সংগ্রহ করুন এখনই</a>
         </div>
     </section>
+
+
+
+    <section id="checkout-section" class="checkout-section">
+        <div class="container">
+            <h2 class="section-title">পছন্দের কালার সিলেক্ট করে <span>অর্ডার কনফার্ম</span> করুন</h2>
+
+            <div class="checkout-wrapper">
+                <div class="checkout-card">
+
+                    <div class="checkout-left">
+                        <div class="img-container square-image-holder">
+                            <img src="img/product_image/24_bijoy_ullas/polo_t-shart/white.jpeg" id="main-product-img"
+                                alt="ডিজাইন এ: জুলাই উল্লাস" class="product-img">
+                            <span class="discount-badge">বিশেষ অফার</span>
+                        </div>
+
+                        <div class="product-info-box">
+                            <div class="meta-info">
+                                <span class="fabric-type">Premium Polo (100% Cotton)</span>
+                                <span class="total-sales">🔥 ৩,৩৩০+ বিক্রি হয়েছে</span>
+                            </div>
+
+                            <h3 id="main-product-title">ডিজাইন এ: "জুলাই উল্লাস" (সাদা)</h3>
+
+                            <div class="rating-box">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                                <span class="rating-text">৪.৯/৫ (২৯টি রিভিউ)</span>
+                            </div>
+
+                            <p class="prod-desc">স্টাইল, আরাম ও প্রিমিয়াম কোয়ালিটির এক দারুণ সমন্বয়! ২২০+ GSM
+                                লাক্সারি কমফোর্ট ফেব্রিক্স এবং হাই-কোয়ালিটি ডিটিএফ প্রিন্ট।</p>
+
+                            <ul class="price-offer-list">
+                                <li>🎁 <b>১ পিস টি-শার্ট:</b> মাত্র ৩৯০ টাকা</li>
+                                <li>🎁 <b>৩ পিসের কম্বো অফার:</b> ৩ পিস বা তার বেশি নিলে সরাসরি <b>১৪.৬২৫%
+                                        ডিসকাউন্ট!</b></li>
+                                <li>⚡ <b>অগ্রিম ডেলিভারি অফার:</b> ডেলিভারি চার্জ এডভান্স করলে টোটাল বিল থেকে আরও <b>৫%
+                                        এক্সট্রা ডিসকাউন্ট!</b></li>
+                                <li>🚚 <b>ডেলিভারি চার্জ:</b> ঢাকা সিটিতে <b>৳৭০</b>, ঢাকার বাইরে <b>৳১২০</b>।</li>
+                            </ul>
+
+                            <div class="color-selector-box">
+                                <h4>কালার ও ডিজাইন সিলেক্ট করুন:</h4>
+                                <div class="color-variant-buttons">
+                                    <button type="button" class="variant-dot btn-white active" data-color="white"
+                                        title="সাদা"></button>
+                                    <button type="button" class="variant-dot btn-green" data-color="green"
+                                        title="সবুজ"></button>
+                                    <button type="button" class="variant-dot btn-black" data-color="black"
+                                        title="কালো"></button>
+                                </div>
+                            </div>
+
+                            <div class="checkout-price-display">
+                                <span class="price-label">মূল্য:</span>
+                                <span class="current-price">৳ ৩৯০ <span class="old-price">৳ ৬৫০</span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-right" id="order-form">
+                        <div class="checkout-form-header">
+                            <h3>📋 বিলিং ও শিপিং ইনফরমেশন</h3>
+                            <p>নিচের ফর্মে আপনার সঠিক তথ্য দিয়ে অর্ডারটি সম্পন্ন করুন</p>
+                        </div>
+
+                        <form id="ts-order-form">
+                            <input type="hidden" id="color" value="সাদা">
+                            <input type="hidden" id="design" value="ডিজাইন এ: 'বিকল্প কে আছে?'">
+
+                            <div class="form-group">
+                                <label for="name">আপনার নাম <span class="required">*</span></label>
+                                <input type="text" id="name" class="form-control" placeholder="আপনার সম্পূর্ণ নাম লিখুন"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">মোবাইল নম্বর <span class="required">*</span></label>
+                                <input type="tel" id="phone" class="form-control"
+                                    placeholder="১১ ডিজিটের মোবাইল নম্বর দিন" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">সম্পূর্ণ ঠিকানা <span class="required">*</span></label>
+                                <textarea id="address" class="form-control" rows="2"
+                                    placeholder="জেলা, থানা, গ্রাম অথবা রোডের নাম ও বাসা নম্বর লিখুন"
+                                    required></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="quantity">টি-শার্টের পরিমাণ <span class="required">*</span></label>
+                                    <select id="quantity" class="form-control" required>
+                                        <option value="1">১ পিস (৳ ৩৯০)</option>
+                                        <option value="2">২ পিস (৳ ৭৮০)</option>
+                                        <option value="3">৩ পিস (৳ ১১৭০ -> ৳ ৯৯৯)</option>
+                                        <option value="4">৪ পিস</option>
+                                        <option value="5">৫ পিস</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="size">সাইজ সিলেক্ট করুন <span class="required">*</span></label>
+                                    <select id="size" class="form-control" required>
+                                        <option value="M">M (Chest 38)</option>
+                                        <option value="L">L (Chest 40)</option>
+                                        <option value="XL">XL (Chest 42)</option>
+                                        <option value="XXL">XXL (Chest 44)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>ডেলিভারি এরিয়া সিলেক্ট করুন <span class="required">*</span></label>
+                                <div class="area-radio-group">
+                                    <input type="radio" id="area-dhaka" name="delivery_area" value="dhaka" checked>
+                                    <label for="area-dhaka" class="area-label">📍 ঢাকার ভিতরে (৳ ৭০)</label>
+
+                                    <input type="radio" id="area-outside" name="delivery_area" value="outside">
+                                    <label for="area-outside" class="area-label">🗺️ ঢাকার বাইরে (৳ ১২০)</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group" style="margin-top: 15px;">
+                                <label>পেমেন্ট মেথড সিলেক্ট করুন <span class="required">*</span></label>
+                                <div class="payment-radio-group">
+                                    <input type="radio" id="pay-cod" name="payment_method" value="cod" checked>
+                                    <label for="pay-cod" class="payment-label">💵 ফুল ক্যাশ অন ডেলিভারি</label>
+
+                                    <input type="radio" id="pay-advance" name="payment_method" value="advance">
+                                    <label for="pay-advance" class="payment-label">⚡ ডেলিভারি চার্জ এডভান্স (৫%
+                                        ছাড়!)</label>
+                                </div>
+                            </div>
+
+                            <div id="bkash-payment-wrapper" class="bkash-payment-box" style="display: none;">
+                                <div class="bkash-header">
+                                    <img src="data:image/jpeg;base64,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"
+                                        alt="বিকাশ লোগো" class="bkash-logo">
+                                    <span class="bkash-title">বিকাশ পার্সোনাল পেমেন্ট</span>
+                                </div>
+                                <div class="bkash-info">
+                                    <p>নিচের বিকাশ নাম্বারে আপনার এরিয়ার ডেলিভারি চার্জ (৳<span
+                                            id="bkash-charge-amount">৭০</span>) <b>Send Money</b> করুন:</p>
+                                    <p>📱 বিকাশ নাম্বার: <b id="bkash-number">01880884197</b></p>
+                                    <div class="form-group" style="margin-top: 10px;">
+                                        <label for="trxid" style="color: #333; font-size: 13px; font-weight: 600;">বিকাশ
+                                            ট্রানজেকশন আইডি (TrxID) <span class="required">*</span></label>
+                                        <input type="text" id="trxid" class="form-control trx-input"
+                                            placeholder="যেমন: BKA87X92LQ">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="invoice-summary-box" style="margin-top: 20px;">
+                                <h4>📊 অর্ডার সামারি (Order Summary)</h4>
+                                <div class="invoice-row">
+                                    <span>সাবটোটাল (Subtotal):</span>
+                                    <span>৳ <span id="invoice-subtotal">৩৯০</span></span>
+                                </div>
+                                <div class="invoice-row discount-row" id="invoice-discount-wrapper"
+                                    style="display: none;">
+                                    <span>স্পেশাল অফার ডিসকাউন্ট (14.625%):</span>
+                                    <span class="discount-text">- ৳ <span id="invoice-discount">০</span></span>
+                                </div>
+                                <div class="invoice-row">
+                                    <span>ডেলিভারি চার্জ (Shipping Fee):</span>
+                                    <span>৳ <span id="invoice-shipping">৭০</span></span>
+                                </div>
+                                <div class="invoice-row discount-row" id="invoice-advance-discount-wrapper"
+                                    style="display: none;">
+                                    <span>এডভান্স পেমেন্ট বোনাস ডিসকাউন্ট (5%):</span>
+                                    <span class="discount-text">- ৳ <span id="invoice-advance-discount">০</span></span>
+                                </div>
+                                <hr class="invoice-divider">
+                                <div class="invoice-row invoice-total">
+                                    <span>সর্বমোট প্রদেয় বিল (Total Payable):</span>
+                                    <span>৳ <span id="invoice-total">৪৬০</span></span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-order btn-submit-checkout"
+                                style="margin-top: 15px; width: 100%;">
+                                🛍️ অর্ডার কনফার্ম করুন (হোয়াটসঅ্যাপে)
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <section class="features">
         <div class="container">
@@ -125,341 +264,13 @@
         </div>
     </section>
 
-    <section id="products" class="products-section">
-        <div class="container">
-            <h2 class="section-title">আমাদের <span>এক্সক্লুসিভ</span> কালেকশন</h2>
-            <div class="products-grid" id="dynamic-products-grid"></div>
-        </div>
-    </section>
-
-    <section id="order-form" class="order-section">
-        <div class="container">
-            <div class="form-container">
-                <h2>অর্ডার কনফার্ম করুন</h2>
-                <p class="form-subtitle">নিচের ফর্মে সঠিক তথ্য দিয়ে আপনার অর্ডারটি সম্পন্ন করুন। আমাদের প্রতিনিধি কল
-                    করে অর্ডার কনফার্ম করবেন।</p>
-
-                <form id="ts-order-form">
-                    <div class="form-group">
-                        <label for="name">আপনার নাম *</label>
-                        <input type="text" id="name" required class="form-control" placeholder="যেমন: মোঃ আলমগীর হোসেন">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">মোবাইল নম্বর *</label>
-                        <input type="tel" id="phone" required class="form-control" placeholder="যেমন: 017XXXXXXXX">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">সম্পূর্ণ ঠিকানা (জেলাসহ) *</label>
-                        <textarea id="address" rows="3" required class="form-control"
-                            placeholder="যেমন: বাসা নং, রোড নং, থানা, জেলা"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="quantity">পরিমাণ *</label>
-                        <input type="number" id="quantity" min="1" required class="form-control" placeholder="যেমন: 2">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="color">রঙ সিলেক্ট করুন *</label>
-                        <select id="color" required class="form-control">
-                            <option value="সাদা">সাদা</option>
-                            <option value="কালো">কালো</option>
-                            <option value="সবুজ">সবুজ</option>
-                        </select>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="design">ডিজাইন সিলেক্ট করুন *</label>
-                            <select id="design" required class="form-control">
-                                <option value="ডিজাইন এ: 'বিকল্প কে আছে?'">ডিজাইন এ: "বিকল্প কে আছে?"</option>
-                                <option value="ডিজাইন বি: 'স্বাধীনতা ২৪'">ডিজাইন বি: "স্বাধীনতা ২৪"</option>
-                                <option value="ডিজাইন সি: 'বুকের ভেতর দারুণ ঝড়'">ডিজাইন সি: "বুকের ভেতর দারুণ ঝড়"
-                                </option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="size">সাইজ সিলেক্ট করুন *</label>
-                            <select id="size" required class="form-control">
-                                <option value="M">M (Chest 38, Length 27)</option>
-                                <option value="L">L (Chest 40, Length 28)</option>
-                                <option value="XL">XL (Chest 42, Length 29)</option>
-                                <option value="XXL">XXL (Chest 44, Length 30)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="delivery-info">
-                        <p style="font-weight: bold; margin-bottom: 4px;">🚚 ডেলিভারি চার্জ:</p>
-                        <p>ঢাকার ভিতরে: ৳ ৬০ | ঢাকার বাইরে: ৳ ১২০</p>
-                    </div>
-
-                    <button type="submit" class="btn-submit">অর্ডার সম্পন্ন করুন (ক্যাশ অন ডেলিভারি)</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
             <p>&copy; ২০২৬ বিপ্লব ২৪ কালেকশন। সর্বস্বত্ব সংরক্ষিত।</p>
-            <a href="https://sultanaskan.github.io" target="_blank"> Developed by Sultan Ahmed</a>
         </div>
-    </footer <!-- ডাটা ও লজিক জাভাস্ক্রিপ্ট সেকশন -->
-    <script>
-        // ১. প্রোডাক্ট লিস্ট অবজেক্ট (Data)
-        const productsData = [
-            {
-                id: "A",
-                title: "ডিজাইন এ: \"জুলাই উল্লাস\"",
-                category: "Premium Polo (100% Cotton)",
-                image: "img/product_image/24_bijoy_ullas/polo_t-shart/white.jpeg", // সার্ভার সেফ রিলেটিভ পাথ
-                discount: "৩০% ছাড়",
-                sales: "১,২৫০+",
-                rating: "৪.৯/৫",
-                reviews: "১৮৫টি রিভিউ",
-                description: "জুলাই বিপ্লবের অন্যতম স্মরণীয় মুহূর্তের স্মৃতি সমৃদ্ধ এই আকর্ষণীয় প্রিমিয়াম পোলো টি-শার্ট।",
-                features: [
-                    "ফেব্রিক্স: ২২০+ GSM (লাক্সারি কমফোর্ট)",
-                    "প্রিন্ট: হাই-কোয়ালিটি ডিটিএফ (ধুলে রঙ উঠবে না)"
-                ],
-                colors: [
-                    { name: "White", class: "white", active: true },
-                    { name: "Black", class: "black", active: false },
-                    { name: "Navy Blue", class: "navy", active: false }
-                ],
-                currentPrice: "৪৫০",
-                oldPrice: "৬৫০"
-            },
-            {
-                id: "B",
-                title: "ডিজাইন বি: \"স্বাধীনতা ২৪\"",
-                category: "Premium Polo (100% Cotton)",
-                image: "img/product_image/24_bijoy_ullas/polo_t-shart/green.jpeg",
-                discount: "৩০% ছাড়",
-                sales: "৯8০+",
-                rating: "৪.৮/৫",
-                reviews: "৯২টি রিভিউ",
-                description: "লাল-সবুজের আবহে তরুণদের বিজয়ের মূর্ত প্রতীক এবং অসাধারণ ক্যালিগ্রাফি আর্ট।",
-                features: [
-                    "ফেব্রিক্স: ২২০+ GSM (লাক্সারি কমফোর্ট)",
-                    "প্রিন্ট: হাই-কোয়ালিটি ডিটিএফ"
-                ],
-                colors: [{ name: "Green", class: "green", active: true }],
-                currentPrice: "৪৫০",
-                oldPrice: "৬৫০"
-            },
-            {
-                id: "C",
-                title: "ডিজাইন সি: \"বুকের ভেতর দারুণ ঝড়\"",
-                category: "Premium Polo (100% Cotton)",
-                image: "img/product_image/24_bijoy_ullas/polo_t-shart/black.jpeg",
-                discount: "৩০% ছাড়",
-                sales: "১,১০০+",
-                rating: "৪.准/৫",
-                reviews: "১৪টি রিভিউ",
-                description: "শহীদি চেতনা এবং বীরত্বগাথা ফুটিয়ে তোলা মিনিমালিস্ট এবং ট্রেন্ডি ডিজাইন।",
-                features: [
-                    "ফেব্রিক্স: ২২০+ GSM (লাক্সারি কমফোর্ট)",
-                    "প্রিন্ট: হাই-কোয়ালিটি ডিটিএফ"
-                ],
-                colors: [{ name: "Black", class: "black", active: true }],
-                currentPrice: "৪৫০",
-                oldPrice: "৬৫০"
-            }
-        ];
+    </footer>
 
-        // ২. লুপের সাহায্যে ডাইনামিক কার্ড রেন্ডারিং
-        function renderProducts() {
-            const grid = document.getElementById('dynamic-products-grid');
-            if (!grid) return;
-            let htmlContent = '';
-
-            productsData.forEach(product => {
-                let featuresHTML = '';
-                product.features.forEach(f => {
-                    featuresHTML += `<li>🟢 <b>${f.split(':')[0]}:</b>${f.split(':')[1]}</li>`;
-                });
-
-                let colorsHTML = '';
-                if (product.colors && product.colors.length > 0) {
-                    colorsHTML = `
-                        <div class="color-selector">
-                            <h4>কালার এভেইলেবল:</h4>
-                            <div class="color-options">
-                                ${product.colors.map(c => `<span class="color-dot ${c.class} ${c.active ? 'active' : ''}" title="${c.name}"></span>`).join('')}
-                            </div>
-                        </div>`;
-                }
-
-                htmlContent += `
-                    <div class="product-card">
-                        <div>
-                            <div class="img-container">
-                                <img src="${product.image}" alt="${product.title}" class="product-img">
-                                ${product.discount ? `<span class="discount-badge">${product.discount}</span>` : ''}
-                            </div>
-                            <div class="product-info">
-                                <div class="meta-info">
-                                    <span class="fabric-type">${product.category}</span>
-                                    <span class="total-sales">🔥 <span class="sales-count">${product.sales}</span> বিক্রি হয়েছে</span>
-                                </div>
-                                <h3>${product.title}</h3>
-                                <div class="rating-box">
-                                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                                    <span class="rating-text">${product.rating} (<span class="review-count">${product.reviews}</span>)</span>
-                                </div>
-                                <p>${product.description}</p>
-                                <ul class="product-features">
-                                    ${featuresHTML}
-                                </ul>
-                                ${colorsHTML}
-                            </div>
-                        </div>
-                        <div class="product-info" style="padding-top: 0;">
-                            <div class="price-box">
-                                <span class="current-price">৳ ${product.currentPrice} <span class="old-price">৳ ${product.oldPrice}</span></span>
-                            </div>
-                            <a href="#order-form" class="btn-order">👉 এখনই অর্ডার করুন</a>
-                        </div>
-                    </div>
-                `;
-            });
-            grid.innerHTML = htmlContent;
-        }
-
-        document.addEventListener('DOMContentLoaded', renderProducts);
-
-        // ৩. হোয়াটসঅ্যাপ ফ্লোটিং বাটন হ্যান্ডলার
-        (function () {
-            var num = "8801880884197";
-            var msg = "আসসালামু আলাইকুম। আমি আপনাদের 'বিপ্লব ২৪' টি-শার্ট কালেকশনটি দেখেছি। এ বিষয়ে বিস্তারিত জানতে চাই।";
-            var fullUrl = "https://api.whatsapp.com/send?phone=" + num + "&text=" + encodeURIComponent(msg);
-            var waBtn = document.getElementById("whatsapp-customer-care");
-            if (waBtn) waBtn.href = fullUrl;
-        })();
-
-        // ৪. ফর্ম সাবমিশন লজিক
-        const orderForm = document.getElementById('ts-order-form');
-        if (orderForm) {
-            orderForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const name = document.getElementById('name').value;
-                const phone = document.getElementById('phone').value;
-                const address = document.getElementById('address').value;
-                const quantity = document.getElementById('quantity').value;
-                const color = document.getElementById('color').value;
-                const design = document.getElementById('design').value;
-                const size = document.getElementById('size').value;
-
-                const whatsappNumber = "8801880884197";
-                const message = `*নতুন টি-শার্ট অর্ডার বিবরণী (বিপ্লব ২৪)*\n` +
-                    `----------------------------------\n\n` +
-                    `👤 *নাম:* ${name}\n` +
-                    `📞 *মোবাইল নম্বর:* ${phone}\n` +
-                    `📍 *ঠিকানা:* ${address}\n\n` +
-                    `🛒 *পরিমাণ:* ${quantity}\n` +
-                    `🎨 *রঙ:* ${color}\n` +
-                    `👕 *ডিজাইন:* ${design}\n` +
-                    `📏 *সাইজ:* ${size}\n\n` +
-                    `----------------------------------\n` +
-                    `_ক্যাশ অন ডেলিভারিতে অর্ডারটি কনফার্ম করুন।_`;
-
-                window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`, '_blank');
-            });
-        }
-
-        // ৫. ব্যাকগ্রাউন্ড মিউজিক কন্ট্রোল
-        const bgMusic = document.getElementById('bg-music');
-        const musicToggle = document.getElementById('music-toggle');
-
-        if (bgMusic && musicToggle) {
-            const musicIcon = musicToggle.querySelector('.music-icon');
-            bgMusic.volume = 1;
-            bgMusic.muted = true;
-            bgMusic.play().catch(err => console.log("Autoplay waiting for interaction"));
-
-            function activateSound() {
-                if (bgMusic.muted) {
-                    bgMusic.muted = false;
-                    musicToggle.classList.add('music-playing');
-                    if (musicIcon) musicIcon.textContent = '🔊';
-                    window.removeEventListener('scroll', activateSound);
-                    document.removeEventListener('mousemove', activateSound);
-                    document.removeEventListener('touchstart', activateSound);
-                }
-            }
-
-            window.addEventListener('scroll', activateSound, { passive: true });
-            document.addEventListener('mousemove', activateSound, { passive: true });
-            document.addEventListener('touchstart', activateSound, { passive: true });
-
-            musicToggle.addEventListener('click', function (e) {
-                e.stopPropagation();
-                if (bgMusic.muted || bgMusic.paused) {
-                    bgMusic.muted = false;
-                    bgMusic.play();
-                    musicToggle.classList.add('music-playing');
-                    if (musicIcon) musicIcon.textContent = '🔊';
-                } else {
-                    bgMusic.pause();
-                    musicToggle.classList.remove('music-playing');
-                    if (musicIcon) musicIcon.textContent = '🔇';
-                }
-            });
-        }
-
-        // ৬. হিরো স্লাইডার লজিক (সার্ভার সেফ পাথ ফিক্সড)
-        document.addEventListener("DOMContentLoaded", function () {
-            const slidesData = [
-                { img: "img/hero_banner/hero_banner_1.webp", overlay: "linear-gradient(rgba(59, 185, 0, 0.24), rgba(0, 0, 0, 0.65))" },
-                { img: "img/hero_banner/hero_banner_2.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
-                { img: "img/hero_banner/hero_banner_3.webp", overlay: "linear-gradient(rgba(0, 158, 8, 0.65), rgba(119, 3, 3, 0.281))" },
-                { img: "img/hero_banner/hero_banner_4.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.4), rgba(0, 0, 0, 0.7))" },
-                { img: "img/hero_banner/hero_banner_5.webp", overlay: "linear-gradient(rgba(59, 185, 0, 0.3), rgba(0, 0, 0, 0.7))" },
-                { img: "img/hero_banner/hero_banner_6.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
-                { img: "img/hero_banner/hero_banner_7.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
-                { img: "img/hero_banner/hero_banner_8.jpg", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
-                { img: "img/hero_banner/hero_banner_9.avif", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" },
-                { img: "img/hero_banner/hero_banner_10.webp", overlay: "linear-gradient(rgba(36, 146, 3, 0.432), rgba(0, 0, 0, 0.65))" }
-            ];
-
-            const slide1 = document.getElementById("slide-1");
-            const slide2 = document.getElementById("slide-2");
-
-            if (!slide1 || !slide2) return;
-
-            let currentIndex = 0;
-            let isSlide1Active = true;
-            const displayDuration = 5000;
-
-            function setSlideStyle(slideElement, index) {
-                slideElement.style.backgroundImage = `${slidesData[index].overlay}, url('${slidesData[index].img}')`;
-            }
-
-            // প্রথম ইমেজ সেটআপ
-            setSlideStyle(slide1, currentIndex);
-
-            setInterval(function () {
-                let nextIndex = (currentIndex + 1) % slidesData.length;
-
-                if (isSlide1Active) {
-                    setSlideStyle(slide2, nextIndex);
-                    slide2.classList.add("active-slide");
-                    slide1.classList.remove("active-slide");
-                } else {
-                    setSlideStyle(slide1, nextIndex);
-                    slide1.classList.add("active-slide");
-                    slide2.classList.remove("active-slide");
-                }
-
-                currentIndex = nextIndex;
-                isSlide1Active = !isSlide1Active;
-            }, displayDuration);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

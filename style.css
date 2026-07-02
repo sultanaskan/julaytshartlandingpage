@@ -12,6 +12,8 @@
     --text-muted: #4b5563;
     --white: #ffffff;
     --border-color: #e5e7eb;
+    --bkash-color: #e2136e;
+    --bkash-light: #fff0f6;
 }
 
 /* -----------------------------------------
@@ -69,86 +71,6 @@ header .container {
     color: var(--primary-green);
 }
 
-
-/* ==========================================================================
-   অ্যানিমেটেড গ্লোয়িং বর্ডারযুক্ত অর্ডার বাটন
-   ========================================================================== */
-.btn-order {
-    position: relative;
-    display: block;
-    text-align: center;
-    background-color: var(--dark-bg);
-    /* বাটনের মেইন ব্যাকগ্রাউন্ড */
-    color: #ffffff !important;
-    text-decoration: none;
-    font-weight: 700;
-    margin: 10px;
-    padding: 14px 24px;
-    border-radius: 12px;
-    z-index: 1;
-    overflow: hidden;
-    /* বর্ডারের বাইরের বাড়তি অংশ লুকিয়ে রাখার জন্য */
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.25);
-}
-
-/* বাটনের পেছনের ব্যাকগ্রাউন্ড কালার বেল্ট যা অনবরত ঘুরবে */
-.btn-order::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    /* লাল ও সবুজ কালারের মিক্সড অ্যানিমেটেড গ্রেডিয়েন্ট (জুলাই বিপ্লব থিম) */
-    background: conic-gradient(transparent,
-            var(--primary-red),
-            #ff4d4d,
-            transparent,
-            var(--primary-green),
-            #4ade80,
-            transparent);
-    z-index: -2;
-    animation: rotateBorder 3s linear infinite;
-    /* ৩ সেকেন্ড পর পর ঘুরবে */
-}
-
-/* ভেতরের মেইন শেপ যা বর্ডারটিকে চিকন ও সুন্দর দেখাবে */
-.btn-order::after {
-    content: '';
-    position: absolute;
-    inset: 3px;
-    /* বর্ডারটি কতটা চিকন বা মোটা হবে তা নির্ধারণ করে (3px আদর্শ) */
-    background: var(--dark-bg);
-    /* আগের ডার্ক ব্যাকগ্রাউন্ড মেইনটেইন করবে */
-    border-radius: 9px;
-    /* মেইন বর্ডারের সাথে সামঞ্জস্য রেখে সামান্য কম */
-    z-index: -1;
-    transition: all 0.3s ease;
-}
-
-/* মাউস হোভার করলে ইফেক্ট */
-.btn-order:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 25px rgba(22, 163, 74, 0.4);
-}
-
-.btn-order:hover::after {
-    background: #000000;
-    /* হোভার করলে ভেতরের অংশ আরও ড্রামাটিক ডার্ক হবে */
-}
-
-/* রোটেশন অ্যানিমেশন কিফ্রেম */
-@keyframes rotateBorder {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .btn-header {
     background-color: var(--primary-green);
     color: var(--white);
@@ -165,16 +87,75 @@ header .container {
     transform: translateY(-2px);
 }
 
-
-
 /* ==========================================================================
-   অ্যানিমেটেড ব্যাকগ্রাউন্ড স্লাইডারযুক্ত হিরো সেকশন
+   4. Animated Glowing Border Order Button
    ========================================================================== */
+.btn-order {
+    position: relative;
+    display: block;
+    text-align: center;
+    background-color: var(--dark-bg);
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 10px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.25);
+}
+
+.btn-order::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent,
+            var(--primary-red),
+            #ff4d4d,
+            transparent,
+            var(--primary-green),
+            #4ade80,
+            transparent);
+    z-index: -2;
+    animation: rotateBorder 3s linear infinite;
+}
+
+.btn-order::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: var(--dark-bg);
+    border-radius: 9px;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.btn-order:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(22, 163, 74, 0.4);
+}
+
+.btn-order:hover::after {
+    background: #000000;
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* ==========================================================================
-   স্মুথ অ্যানিমেটেড ব্যাকগ্রাউন্ড স্লাইডার (ব্ল্যাংক ইফেক্ট ফিক্সড)
-   ========================================================================== */
-/* ==========================================================================
-   ডাইনামিক হিরো স্লাইডার সিএসএস
+   5. Dynamic Hero Slider Section
    ========================================================================== */
 .hero {
     position: relative;
@@ -195,13 +176,10 @@ header .container {
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0;
-    /* শুরুতে ইনভিজিবল */
     z-index: 1;
-    /* এই ট্রানজিশনের কারণে ইমেজ চেঞ্জ হওয়ার সময় কোনো ব্ল্যাংক স্পেস দেখাবে না, স্মুথ ক্রসফেড হবে */
     transition: opacity 1.5s ease-in-out;
 }
 
-/* যে স্লাইডটি বর্তমানে স্ক্রিনে দেখাবে */
 .hero-slide.active-slide {
     opacity: 1;
 }
@@ -212,36 +190,6 @@ header .container {
     max-width: 800px;
     margin: 0 auto;
 }
-
-/* অপাসিটি অ্যানিমেশন টাইমলাইন (১০০% স্মুথ ক্রসফেড) */
-@keyframes smoothSlider {
-    0% {
-        opacity: 0;
-        animation-timing-function: ease-in;
-    }
-
-    8% {
-        opacity: 1;
-        /* ইমেজটি ভেসে উঠবে */
-    }
-
-    33% {
-        opacity: 1;
-        /* ইমেজটি স্থায়ী থাকবে */
-    }
-
-    41% {
-        opacity: 0;
-        /* ইমেজটি আস্তে আস্তে মিলিয়ে যাবে */
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-
-
 
 .tag {
     background-color: var(--primary-red);
@@ -290,11 +238,8 @@ header .container {
     transform: translateY(-2px);
 }
 
-
-
-
 /* -----------------------------------------
-   5. Features Section
+   6. Features Section
 -------------------------------------------- */
 .features {
     padding: 60px 0;
@@ -331,144 +276,269 @@ header .container {
     color: var(--text-muted);
 }
 
-/* -----------------------------------------
-   6. Products Section
--------------------------------------------- */
-.products {
-    padding: 80px 0;
+@media (max-width: 768px) {
+    .features .container {
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .features-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 12px;
+        padding-bottom: 10px;
+    }
+
+    .feature-card {
+        flex: 0 0 75%;
+        max-width: 280px;
+        box-sizing: border-box;
+    }
+}
+
+/* ==========================================================================
+   7. Pro One-Page Checkout Card Layout (Left: Product, Right: Form)
+   ========================================================================== */
+.checkout-section {
+    padding: 60px 0;
+    background-color: var(--light-bg);
 }
 
 .section-title {
     text-align: center;
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .section-title span {
     color: var(--primary-red);
 }
 
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.checkout-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1150px;
 }
 
-.product-card {
+.checkout-card {
+    width: 100%;
     background-color: var(--white);
-    border-radius: 20px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
     border: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+}
+
+/* --- Left Column: Product Info & Color Switcher --- */
+.checkout-left {
+    padding: 35px;
+    border-right: 1px solid var(--border-color);
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.product-img {
+.checkout-left .square-image-holder {
+    position: relative;
     width: 100%;
-    height: 320px;
-    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    background-color: #f8fafc;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #f1f5f9;
 }
 
-.product-info {
-    padding: 25px;
+.checkout-left .product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-.product-info h3 {
-    font-size: 20px;
+.checkout-card:hover .product-img {
+    transform: scale(1.02);
+}
+
+.checkout-left .discount-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--primary-red);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+}
+
+.product-info-box h3 {
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 10px;
+    color: var(--text-dark);
 }
 
-.product-info p {
+.checkout-left .meta-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.checkout-left .fabric-type {
+    background-color: #f3f4f6;
+    padding: 3px 10px;
+    border-radius: 6px;
+}
+
+.checkout-left .total-sales {
+    color: #b45309;
+}
+
+.checkout-left .rating-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.checkout-left .prod-desc {
     font-size: 14px;
     color: var(--text-muted);
     margin-bottom: 20px;
 }
 
-.price-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+.price-offer-list {
+    list-style: none;
+    margin-bottom: 20px;
 }
 
-.price {
-    font-size: 24px;
+.price-offer-list li {
+    font-size: 14px;
+    padding: 8px 12px;
+    background: #f0fdf4;
+    border-left: 4px solid var(--primary-green);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.price-offer-list li:nth-child(2) {
+    background: #eff6ff;
+    border-left-color: #2563eb;
+}
+
+.color-selector-box {
+    margin-bottom: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.color-selector-box h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.color-variant-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.variant-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 3px solid #e5e7eb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.variant-dot.active {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+    transform: scale(1.08);
+}
+
+.btn-white {
+    background-color: #ffffff;
+}
+
+.btn-green {
+    background-color: #006a4e;
+}
+
+.btn-black {
+    background-color: #111827;
+}
+
+.checkout-price-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.checkout-price-display .price-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.checkout-price-display .current-price {
+    font-size: 26px;
     font-weight: 700;
     color: var(--primary-green);
 }
 
-.old-price {
+.checkout-price-display .old-price {
     font-size: 14px;
     color: #9ca3af;
     text-decoration: line-through;
-    margin-left: 5px;
+    font-weight: 400;
 }
 
-.discount-badge {
-    background-color: #fee2e2;
-    color: var(--primary-red);
-    font-size: 12px;
+/* --- Right Column: Checkout Billing Form --- */
+.checkout-right {
+    padding: 35px;
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-form-header {
+    margin-bottom: 25px;
+}
+
+.checkout-form-header h3 {
+    font-size: 20px;
     font-weight: 700;
-    padding: 4px 10px;
-    border-radius: 5px;
+    color: var(--text-dark);
+    margin-bottom: 4px;
 }
 
-.btn-product {
-    display: block;
-    text-align: center;
-    background-color: var(--dark-bg);
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 700;
-    padding: 12px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-product:hover {
-    background-color: #000000;
-}
-
-/* -----------------------------------------
-   7. Order Form Section
--------------------------------------------- */
-.order-section {
-    padding: 80px 0;
-    background-color: var(--white);
-}
-
-.form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: var(--light-bg);
-    padding: 40px 30px;
-    border-radius: 24px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color);
-}
-
-.form-container h2 {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.form-sub {
-    text-align: center;
+.checkout-form-header p {
+    font-size: 13px;
     color: var(--text-muted);
-    font-size: 14px;
-    margin-bottom: 30px;
+}
+
+.required {
+    color: var(--primary-red);
 }
 
 .form-group {
@@ -501,43 +571,183 @@ header .container {
 
 .form-row {
     display: grid;
-    grid-template-columns: 140fr 140fr;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
-.delivery-box {
-    background-color: #fef9c3;
-    border: 1px solid #fef08a;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 14px;
-    color: #713f12;
-    margin-bottom: 25px;
+/* ==========================================================================
+   NEW: Custom Radio Groups (Area & Payment Methods)
+   ========================================================================== */
+.payment-radio-group,
+.area-radio-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
 }
 
-.delivery-box p:first-child {
-    font-weight: 700;
-    margin-bottom: 4px;
+.payment-radio-group input,
+.area-radio-group input {
+    display: none;
+    /* ডিফল্ট ব্রাউজার রেডিও ইনপুট হাইড */
 }
 
-.btn-submit {
-    width: 100%;
-    background-color: var(--primary-green);
-    color: var(--white);
-    border: none;
-    font-family: inherit;
-    font-size: 18px;
-    font-weight: 700;
-    padding: 15px;
+.payment-label,
+.area-label {
+    flex: 1;
+    border: 2px solid var(--border-color);
     border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(22, 163, 74, 0.2);
+    background: var(--white);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-dark);
 }
 
-.btn-submit:hover {
-    background-color: #15803d;
-    transform: translateY(-1px);
+/* সিলেক্টেড রেডিও বাটন ডিজাইন */
+.payment-radio-group input:checked+.payment-label,
+.area-radio-group input:checked+.area-label {
+    border-color: var(--primary-green);
+    background: #f0fdf4;
+    color: #166534;
+    box-shadow: 0 4px 10px rgba(22, 163, 74, 0.08);
+}
+
+/* ==========================================================================
+   NEW: Premium bKash Payment Box & Inputs
+   ========================================================================== */
+.bkash-payment-box {
+    background: var(--bkash-light);
+    border: 2px dashed var(--bkash-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(226, 19, 110, 0.04);
+    animation: slideDownIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bkash-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #fbcfe8;
+    padding-bottom: 8px;
+}
+
+.bkash-logo {
+    height: 32px;
+    width: auto;
+}
+
+.bkash-title {
+    color: var(--bkash-color);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.bkash-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #4d4d4d;
+    line-height: 1.5;
+}
+
+.bkash-info b {
+    color: var(--bkash-color);
+    font-size: 16px;
+    background: #fce7f3;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ট্রানজেকশন আইডি স্পেশাল ইনপুট */
+.trx-input {
+    border: 1px solid #f472b6 !important;
+    background: var(--white) !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.trx-input:focus {
+    border-color: var(--bkash-color) !important;
+    box-shadow: 0 0 0 3px rgba(226, 19, 110, 0.2) !important;
+}
+
+@keyframes slideDownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   NEW: Live Invoice Summary Box Design
+   ========================================================================== */
+.invoice-summary-box {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.invoice-summary-box h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 6px;
+}
+
+.invoice-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+.discount-row {
+    color: var(--primary-red);
+    font-weight: 600;
+}
+
+.discount-text {
+    color: var(--primary-red);
+}
+
+.invoice-divider {
+    border: 0;
+    border-top: 1px dashed var(--border-color);
+    margin: 10px 0;
+}
+
+.invoice-total {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0;
+}
+
+/* সাবমিট বোতাম ইন্টিগ্রেশন */
+.btn-submit-checkout {
+    width: 100%;
+    margin: 15px 0 0 0 !important;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
 }
 
 /* -----------------------------------------
@@ -552,43 +762,26 @@ footer {
     border-top: 1px solid #1f2937;
 }
 
-/* -----------------------------------------
-   9. Responsive Media Queries
--------------------------------------------- */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .form-container {
-        padding: 30px 20px;
-    }
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 5px;
 }
 
-
-
-
-
+footer a:hover {
+    color: var(--primary-green);
+}
 
 /* ==========================================================================
-   মিউজিক বাটন স্টাইল
+   9. Floating Utility Buttons (Music & WhatsApp)
    ========================================================================== */
 .music-btn {
     position: fixed;
     bottom: 30px;
     left: 30px;
-    /* স্ক্রিনের নিচে বাম কোণায় থাকবে (ডান কোণায় চ্যাট/হোয়াটসঅ্যাপ বাটন থাকলে সুবিধা) */
     width: 50px;
     height: 50px;
-    background-color: var(--primary-red, #dc2626);
+    background-color: var(--primary-red);
     border: none;
     border-radius: 50%;
     color: white;
@@ -606,9 +799,8 @@ footer {
     transform: scale(1.1);
 }
 
-/* মিউজিক যখন চলবে তখন বাটনটি হালকা অ্যানিমেট হবে */
 .music-playing {
-    background-color: var(--primary-green, #16a34a);
+    background-color: var(--primary-green);
     animation: pulse 2s infinite;
 }
 
@@ -626,47 +818,34 @@ footer {
     }
 }
 
-
-
-
-/* ==========================================================================
-   ফ্লোটিং হোয়াটসঅ্যাপ বাটন স্টাইল
-   ========================================================================== */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    /* স্ক্রিনের নিচে ডান কোণায় থাকবে */
     width: 60px;
     height: 60px;
     background-color: #25d366;
-    /* হোয়াটসঅ্যাপ অফিশিয়াল গ্রিন */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
     z-index: 99999;
-    /* বাটনটি যেন সবার ওপরে থাকে */
     transition: all 0.3s ease;
     animation: waPulse 2s infinite;
-    /* আকর্ষণীয় পালস অ্যানিমেশন */
 }
 
-/* আইকনের সাইজ ঠিক করার জন্য */
 .whatsapp-icon {
     width: 35px;
     height: 35px;
 }
 
-/* মাউস হোভার করলে বাটনটি সামান্য বড় হবে */
 .whatsapp-float:hover {
     transform: scale(1.1);
     background-color: #20ba5a;
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
 }
 
-/* অনবরত কাস্টমারের দৃষ্টি আকর্ষণ করার জন্য পালসিং ইফেক্ট */
 @keyframes waPulse {
     0% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
@@ -681,8 +860,50 @@ footer {
     }
 }
 
-/* মোবাইল ডিভাইসের স্ক্রিন ছোট হলে বাটনের পজিশন কিছুটা অ্যাডজাস্ট করার জন্য */
+/* -----------------------------------------
+   10. Responsive Media Queries
+-------------------------------------------- */
+@media (max-width: 992px) {
+    .checkout-card {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-left {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 25px;
+    }
+
+    .checkout-left .square-image-holder {
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .checkout-right {
+        padding: 25px;
+    }
+}
+
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-radio-group,
+    .area-radio-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
     .whatsapp-float {
         bottom: 20px;
         right: 20px;
@@ -693,5 +914,24 @@ footer {
     .whatsapp-icon {
         width: 30px;
         height: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .checkout-section {
+        padding: 30px 0;
+    }
+
+    .checkout-left,
+    .checkout-right {
+        padding: 20px 15px;
+    }
+
+    .product-info-box h3 {
+        font-size: 20px;
+    }
+
+    .checkout-form-header h3 {
+        font-size: 18px;
     }
 }
